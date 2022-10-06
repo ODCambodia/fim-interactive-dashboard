@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Foreign Investment In Cambodia</title>
+    <meta charset="UTF-8">
+    <link rel="icon" href="images/icon_webtab.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="JS_CSS_downloaded_libraries/dc.css">
+    <link rel="stylesheet" type="text/css" href="JS_CSS_downloaded_libraries/leaflet.css">
+    <link rel="stylesheet" type="text/css" href="JS_CSS_downloaded_libraries/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="JS_CSS_downloaded_libraries/leaflet.markerCluster.css" />
+    <link rel="stylesheet" type="text/css" href="JS_CSS_downloaded_libraries/leaflet-legend.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="JS_CSS_downloaded_libraries/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="JS_CSS_downloaded_libraries/leaflet-control-minimap.css">
+    <link rel="stylesheet" type="text/css" href="JS_CSS_downloaded_libraries/google_font_Esteban.css">
+    <link rel="stylesheet" type="text/css" href="JS_CSS_downloaded_libraries/">
+    <link rel="stylesheet" type="text/css" href="myCSS_styleFiles/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@[VERSION]/dist/L.Control.Locate.min.css" />
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar" data-offset="100">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>                        
+            </button>
+                <!-- <a class="navbar-brand" href="#">Foreign Investment in Cambodia</a> -->
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#section1">Foreign Investment in Cambodia</a></li>
+                    <li><a href="#section2">Dashboard</a></li>
+                    <li><a href="#section3">Terria Map</a></li>
+                    <li><a href="#section4">Data Table</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Quick Access <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><button type="button" class="btn btn-info btn-sm btn-block" data-toggle="modal" data-target="#myModal_about">About the project</button></li>
+                            <li><button type="button" class="btn btn-info btn-sm btn-block" data-toggle="modal" data-target="#myModal_demoVideo">Demo video</button></li>
+                            <li><button type="button" class="btn btn-info btn-sm btn-block" data-toggle="modal" data-target="#myModal_copyRight">License & copyright</button></li>
+                            <li><button type="button" class="btn btn-info btn-sm btn-block" onclick=" window.open('abbrlist_dataExplaination.html','_blank')"> Abbr list & data explanation</button></li>
+                            <li><button type="button" class="btn btn-info btn-sm btn-block" data-toggle="modal" data-target="#myModal_dataEntry">NewDataEntryForm</button></li>
+
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row-title" id="control-row">
+            <div class="col-xs-12 dc-data-count dc-chart" id="data-count">
+
+                <h1 id="main-title" style="text-align:center";><b> Foreign Investment Project in Cambodia</b></h1>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+        <style>
+            p.small {
+              line-height: 1.5;
+            }
+            
+            p.big {
+              line-height: 1.5;
+            }
+            </style>
+
+        <div id="section1" class="container-fluid">
+            <div class="row">
+                <h2 style="margin:30px";><b>What is Foreign Investment?</b></h2>
+                <p style="margin:30px" class="big">Foreign investment refers to the investment by a foreign investor, allowing extensive ownership to the investor, in domestic companies or assets of another country. It also allows the investor to have an active role in managing and influencing business strategy. Foreign direct investment (FDI), a type of foreign investment, is the long-term physical investment and purchase in a foreign country by a company. The activities generally include opening plants and buying buildings, factories, machines, or other equipment in another country. [1]</p>
+                <h2 style="margin:30px";><b>Why do investors invest in Cambodia?</b></h2>
+                <p style="margin:30px" class="big">Cambodia is one of the fastest-growing economies, sustaining an average growth of 7.7% between 1998 and 2019. [2] Despite the growth slowdown in 2020 due to the pandemic, Cambodia created more than 150,000 jobs through 195 new investment projects and 43 production expansion requests [3]. Investing in Cambodia helps the investment thrive because of four main reasons: [4]
+                    Conducive investor climate: open economy, generous incentives, and efficient processes
+                    Competitive workforce: young and energetic talent, and proficient and competitive wages
+                    Connected trade infrastructure: favorable trade agreement, logistical infrastructure, and key markets
+                    Consistent and sustainable growth: strong economic growth, consistent business environment, and care for sustainability.
+                    </p>
+                <h2 style="margin:30px";><b>What are the priority sectors in Cambodia?</b></h2>
+                <p style="margin:30px" class="big">The CDC has listed six main priority sectors as a strong part of Cambodia’s economy and investment: [5]</p>
+                <p style="margin:40px">- Agri-food</p>
+                <p style="margin:40px">- Electronics</p>
+                <p style="margin:40px">- Textile and apparel</p>
+                <p style="margin:40px">- Bike and parts</p>
+                <p style="margin:40px">- Furniture and plywood</p>
+                <h2 style="margin:30px";><b>How much does FDI contribute to Cambodia’s GDP?</b></h2>
+                <p style="margin:30px" class="big">Net inflow of FDI in Cambodia almost doubled in the last decade, with its share as a percentage of GDP growing from 7.9% in 2008 to 13.1% in 2018. In 2020, FDI represented 14% of Cambodia’s GDP, which is considerably higher than in other countries in the region such as Thailand (-1.0%) and Vietnam (4.6%).[6] The below graph illustrates the net inflows of foreign direct investment and its percentage share on Cambodia’s GDP (%) from 2000 to 2020.</p>
+                <iframe title="Net Inflow of Foreign Direct Investment in Cambodia (%GDP)" aria-label="Column Chart" id="datawrapper-chart-EP20J" src="https://datawrapper.dwcdn.net/EP20J/2/" scrolling="no" frameborder="0" style="width: 0; min-width: 90% !important; margin:30px"; border: none;" height="500"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();</script>  
+                <h2 style="margin:30px";><b>What are the investment trends by country and sector in Cambodia?</b></h2>
+                <p style="margin:40px">The original visualization is as below (table), but we also had this on the current FIM profile page. We now have to find a visualization for this data.
+
+                    Bong Phalla will work with Bong Pisith! (Work on improving data visualization, polishing and add description to let audience easily understand the data viz) 
+                    </p>
+                    <h2 style="margin:30px";><b>What are the similarities and differences between the previous and new Laws on Investment of the Kingdom of Cambodia (LOI)?</b></h2>
+                <p style="margin:40px">Similarities: [6]</p>
+                <p style="margin: 40px; margin-bottom:0; padding: 0; line-height: 20px">1. Investment incentives: any investment project wishing to receive the status of qualified investment project (QIP) must not be listed on the negative list.
+                </p>
+                <p style="margin: 40px;; padding: 0; line-height: 20px;">2. Investment guarantees: four investment guarantees, such as a non-discriminatory approach to foreign investors, undertaking any nationalization actions by the state, price-fixing of products and services, and rights to purchase foreign currencies, are focused on in both laws.
+                </p>
+                <p style="margin:40px">3. Approved incentives: the approved incentives by the Council for the Development of Cambodia (CDC) can be transferred through the acquisition, sale, or merger of an investment project but not to a third party.
+                </p>
+                <p style="margin:40px">4. Disputes and dispute resolution: the dispute settlement process between the investors is through the conciliation within 30 days by the CDC or the Municipal-Provincial Investment Sub-Committee in accordance with the procedures of the written request from any involved parties.
+                </p>
+                <iframe title="Differences between the previous and new Law on Investment" aria-label="Table" id="datawrapper-chart-HgXui" src="https://datawrapper.dwcdn.net/HgXui/5/" scrolling="no" frameborder="0" style="width: 0; min-width: 95% !important; margin:30px; border: none;" height="931"></iframe><script type="text/javascript">!function(){"use strict";window.addEventListener("message",(function(e){if(void 0!==e.data["datawrapper-height"]){var t=document.querySelectorAll("iframe");for(var a in e.data["datawrapper-height"])for(var r=0;r<t.length;r++){if(t[r].contentWindow===e.source)t[r].style.height=e.data["datawrapper-height"][a]+"px"}}}))}();
+                </script>
+                <h2 style="margin:30px";><b>What are the events that affect investment in Cambodia?
+                </b></h2>
+                <p style="margin:40px">This part will use this visualization style, but I can’t produce one since I don’t know which tool to use. The link below is the information to be used.
+                    To Bong Thealy from Layheng: Bong Vatana is checking the content first. So, I’ll wait for her comments, and I’ll finalize the content and make a visualization for it.
+                    </p>
+                
+                
+
+
+            </div>
+        </div>
+
+        <div id="section2" class="container-fluid">
+            <div class="row-title" id="control-row">
+                <div class="col-xs-12 dc-data-count dc-chart" id="data-count">
+    
+                    <h3 id="main-title" style="font-family: 'Esteban';"><b><i>Dashboard:</i> Tracking Foreign Investment Project in Cambodia</b></h3>
+                    <div class="row" id="count-row">
+                        <div class="col-xs-12 dc-dataTitle-count dc-chart" id="data-count">
+                            <h4>Foreign Investment Records:
+                                <small>
+                <span class="filter-count"></span> selected out of <span class="total-count"></span> records |
+                <a id="all" href="javascript:location.reload();">Reset All</a><i style="color: grey;"> (all legends of the donut charts are scrollable and filterable)</i>
+                </span>
+                </small>
+    
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="control-row-map">
+                <div class="col-md-6">
+                    <h4> Geospatial distribution of the reviewed/selected investment projects<small><a id="mapReset"> reset map</a></small></h4>
+                    <div class="map" id='map'></div>
+                    <div id='cluster-map-anchor'></div>
+                </div>
+                <div class="col-md-3 pie-chart" >
+                    <div class="row" id="control-row-map"></div>
+                    <h4 data-toggle="tooltip" data-placement="top" title="country of first author's institution" ><br>Sector <small><a id="sector">reset</a></small></h4>
+                    <div class="dc-chart" id="chart-ring-sector"></div>
+                    <div style="width:230px; height:120px" id="sector-legend" class="dc-html-legend-container"></div>
+                </div>
+                <div class="col-md-3 pie-chart">
+                    <div class="row" id="control-row-map"></div>
+                    <h4 data-toggle="tooltip" data-placement="top" title="country of first author's institution" ><br>Data Classification <small><a id="data_c">reset</a></small></h4>
+                    <div class="dc-chart" id="chart-ring-data_c"></div>
+                    <div style="width:135px; height:120px" id="data_c-legend" class="dc-html-legend-container"></div>
+                </div>
+            </div>
+            <!-- <div class="row" id="control-row-bar-pie">
+                <div class="col-xs-12 bar-chart">
+                    <h4 data-toggle="tooltip" data-placement="top" title="the sector where you focused on." class="yellow-tooltip"><br>Count on Capital Investment in Million USD <small><a id="cap_inv_m">reset</a></small></h4>
+                    <div class="dc-chart" id="chart-ring-cap_inv_m"></div>
+                    <div id="cap_inv_m-row-axis"></div>
+                    <div style="width:150px; height:120px" id="cap-legend" class="dc-html-legend-container"></div>
+                </div> -->
+            <div class="row" id="control-row-bar-pie">
+                <div class="col-md-3 pie-chart">
+                    <div class="row" id="control-row-map"></div>
+                    <h4 data-toggle="tooltip" data-placement="top" title="This pie chart indicates count of each project in various locations"><br>Project Location <small><a id="pro_loc">reset</a></small></h4>
+                    <div class="dc-chart" id="chart-ring-pro_loc"></div>
+                    <div style="width:150px; height:120px" id="pro_loc-legend" class="dc-html-legend-container"></div>
+                </div>
+                <div class="col-md-3 row-chart">
+                    <div class="row" id="control-row-map"></div>
+                    <h4 data-toggle="tooltip" data-placement="top" title="Country of Investor shows capital investment is invested by different countries. The data is accummulated by counting the project through locations"><br>Country of Investor</h4>
+                    <div class="dc-chart" id="chart-ring-nat_pro"></div>
+                    <div id="nat_pro-row-axis"></div>
+                </div>
+                <div class="col-md-3 pie-chart">
+                    <div class="row" id="control-row-map"></div>
+                    <h4 data-toggle="tooltip" data-placement="top" title="Job creation is classified as range data with pie chart visualization "><br>Job Creation Count</h4>
+                    <div class="dc-chart" id="chart-ring-job_creat"></div>
+                    <div style="width:120px; height:120px" id="job_creat-legend" class="dc-html-legend-container"></div>
+                </div>
+                <div class="col-md-3 row-chart">
+                    <div class="row" id="control-row-map"></div>
+                    <h4 data-toggle="tooltip" data-placement="top" title="Accumulation of capital investment by sector" ><br>Capital Investment by Sector</h4>
+                    <div class="dc-chart" id="chart-ring-capinv"></div>
+                    <div id="capinv-row-axis"></div>
+                </div>
+                
+            <!-- <div class="row" id="control-row-bar-pie">
+                <div class="col-xs-3 pie-chart">
+                    <h4 data-toggle="tooltip" data-placement="top" title="the sector where you focused on." class="yellow-tooltip"><br>Summary of Sector <small><a id="cap_inv_m">reset</a></small></h4>
+                    <div class="dc-chart" id="chart-ring-cap_inv"></div>
+                    <div style="width:150px; height:120px" id="newsector-legend" class="dc-html-legend-container"></div>
+                </div>
+                <div class="col-xs-3 line-chart">
+                    <h4 data-toggle="tooltip" data-placement="top" title="the sector where you focused on." class="yellow-tooltip"><br>Summary of Sector <small><a id="cap_inv_m">reset</a></small></h4>
+                    <div class="dc-chart" id="chart-ring-cap_invline"></div>
+                </div> -->
+            </div>
+
+        <div id="section3" class="container-fluid">
+            <div class="row" id="control-row-map">
+                <h4><br>Terria Map</h4>
+                <!-- <iframe style="width: 1480px; height: 600px; border: none;" src="https://data.opendevelopmentmekong.net/odm-short-url/f68f54a4-8a5c-471b-9481-dc0395421626" allowFullScreen mozAllowFullScreen webkitAllowFullScreen></iframe> -->
+            </div>
+
+        <div id="section4" class="container-fluid">
+            <div class="row" id="control-row">
+                <div class="col-xs-12">
+                    <div>
+                        <div class="dc-dataTable-count">
+                            <span class="filter-count"></span> selected out of <span class="total-count"></span> records
+                        </div>
+                    </div>
+                    <table id="data-table" class="table table-hover dc-data-table">
+                    </table>
+                </div>
+                <div class="row" id="control-row">
+                    <div class="col-xs-12">
+                        <table id="data-table" class="table table-hover dc-data-table">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/d3v5.16.0.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/crossfilterv1.5.4.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/dc4.2.0.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/Leafletv1.6.0.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/colorbrewer.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/underscore-min.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/jQuery.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/Bootstrap.js"></script>
+    <!-- JavaScript Bundle with Popper -->
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/axis_dcv4.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/leaflet.markerCluster.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/dc.leafletv0.5.5.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/jquery.dataTables.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/dc.datatables.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/leaflet-osm.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/Control.MiniMap.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/d3v5.layout.cloud.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/dc-wordcloud_d3v5.js"></script>
+    <script type="text/javascript" src="JS_CSS_downloaded_libraries/removeStopWords.js"></script>
+    
+    </script>
+
+
+    <script type="text/javascript" src="myJS_scripts/main.js"></script>
+
+    <div class="modal fade" id="myModal_about" role="dialog">
+        <div class="modal-dialog">
+
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">About the organization</a>
+                </div>
+                <div class="modal-body">
+
+                    <p>Open Development Cambodia (ODC) is an ‘open data’ website, the first of its kind in Southeast Asia. The open data movement is based on the simple premise that data collected for public interest should be publicly available without restrictions. Information or data in the public domain should be freely available to everyone to use and republish as they wish. Open Development Cambodia does not promote any particular perspective, agenda or bias other than to provide objective information about Cambodia and its development
+                        <a href="https://opendevelopmentcambodia.net/about/background/" target="_blank"><i>Read more</i></a>.
+                    </p>
+
+                    <!-- <strong>Web app team:</strong>
+                    <p>thealy Hello</a> hello</p>
+
+                    <p>Web map design and developer: <a href="https://yputhealy.github.io/" target="_blank">Y Puthealy</a> (yputhealy097@gmail.com)
+                    </p>
+
+                    <p>Data provider (including data structure design): <a href="https://www.linkedin.com/in/y-puthealy-4a2440126/" target="_blank">Y Puthealy</a> (yputhealy097@gmail.com)</p> -->
+
+                    <strong>Acknowledgements:</strong>
+                    <li><a href="https://dc-js.github.io/dc.js/" target="_blank">dc.js</a></li>
+                    <li><a href="https://d3js.org/" target="_blank">D3</a></li>
+                    <li><a href="https://leafletjs.com/" target="_blank">Leaflet</a></li>
+  
+                    <p style="text-align:center;"> <strong> Our web app visitor map</strong> </p>
+
+                    <br>
+                    <div>
+                        <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=080808&w=a&t=n&d=6v6ApSiDI7LU8886HZwaMzprvYOegUfeTHjx0v25lT0&co=ffffff&ct=808080&cmo=3acc3a&cmn=ff5353'></script>
+                    </div>
+
+                    <br>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal_demoVideo" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><b>Demonstration and Explanation</b></h4>
+                </div>
+                <div class="modal-body">
+                    <iframe width="420" height="315" src="https://www.youtube.com/watch?v=y7tHZ3WeJAw&list=RDy7tHZ3WeJAw&start_radio=1"></iframe>
+                    <br>
+                    <b>0:00 - 1:02:</b> Introduction & Motivation
+                    </br>
+                    <b>1:03 - 1:50:</b> Target users
+                    </br>
+                    <b>1:51 - 6:29: </b> Brief demo (major components introduction)
+                    </br>
+                    <b>6:30 - 9:18: </b> Brief demo (examples)
+                    </br>
+                    <b>9:18 - 9:39: </b> Acknowledgements & Contact Info
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="modal fade" id="myModal_copyRight" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><b> License & copyright</b></h4>
+                </div>
+                <div class="modal-body">
+                    <p>This work and any original materials produced and published by Open Development Cambodia herein are licensed under a CC BY-SA 4.0. Data on this page are compiled from publicly available documentation and provided without fee for general informational purposes only. This is neither a commercial research service nor a domain managed by any governmental or inter-governmental agency; it is managed as a private non-profit open data/open knowledge media group. Information is publicly posted only after a careful vetting and verification process. However, ODC cannot guarantee accuracy, completeness or reliability from third-party sources in every instance. ODC makes no representation or warranty, either expressed or implied, in fact or in law, with respect to the accuracy, completeness or appropriateness of the data, materials or documents contained or referenced herein or provided.
+                    </p>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="myModal_dataEntry" role="dialog">
+        <div class="modal-dialog">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><b>Data contribution</b></h4>
+                </div>
+                <div class="modal-body">
+
+                    <p>
+                        ដោយអនុវត្តតាមគោលការណ៍បើកចំហ និងគោលនយោបាយវិនិយោគដែលជំរុញដោយលើកទឹកចិត្ត ដៃគូអភិវឌ្ឍន៍ជាច្រើនមកពីជុំវិញពិភពលោកត្រូវបានទាក់ទាញឱ្យមករកឱកាសវិនិយោគនៅកម្ពុជា។ ប្រទេស​នេះ​បាន​ផ្តល់​ការ​លើក​ទឹក​ចិត្ត​ក្នុង​ការ​វិនិយោគ​ដ៏​អំណោយផល​ដូច​ជា​ការ​លើក​លែង​ពន្ធ និង​ការ​រំលោះ​ពិសេស។ ច្បាប់វិនិយោគរបស់កម្ពុជាត្រូវបានអនុម័តជាលើកដំបូងក្នុងឆ្នាំ 1994 ហើយបានឆ្លងកាត់ដំណើរការវិសោធនកម្មជាច្រើនគួរឱ្យកត់សម្គាល់ក្នុងឆ្នាំ 2003, 2004 និង 2005។ កំណែចុងក្រោយនៃច្បាប់វិនិយោគត្រូវបានអនុវត្តនៅថ្ងៃទី 15 ខែតុលា ឆ្នាំ 2021 ដើម្បីជំនួសច្បាប់ចាស់ឆ្នាំ 1994 ។ ច្បាប់ស្តីពីការវិនិយោគចុងក្រោយបង្អស់មាន១២ជំពូក និង៤២មាត្រា 
+                    </p>
+
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hide loader after 15 seconds, even if the page hasn't finished loading
+        // jQuery('#loadingGIF').fadeOut(15 * 1000);
+        jQuery('#loadingGIF').fadeOut(3 * 1000);
+    </script>
+
+</body>
+
+</html>
