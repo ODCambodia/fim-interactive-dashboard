@@ -1,4 +1,4 @@
-let map = L.map('fim-map').setView([12.5657, 104.9910], 7);
+let map = L.map('fim-map').setView([12.5657, 104.9910], 6.5);
 
 const osmMapnikUrl = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 const osmMapnikAttrib = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
