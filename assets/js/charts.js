@@ -6,6 +6,14 @@ const datasetUrl = url + '?resource_id=' + resourceId + '&limit=' + limit;
 
 let projects = [];
 
+const chartHeightScale  = 0.58;
+const pieXscale         = 1.41;
+const pieRscale         = chartHeightScale * 0.5;
+
+function setHeight(chart) {
+  return chart.width() * chartHeightScale;
+}
+
 try {
   d3.json(datasetUrl).then(data => {
     let records = data.result.records;
@@ -46,6 +54,7 @@ try {
     })
 
     let sectorDimension = ndx.dimension(d => d.sector);
+    let investmentSectorDimension = ndx.dimension( d => d.sector );
     let investmentDimension = ndx.dimension(d => d.investment_mm);
     let provinceDimension = ndx.dimension(d => d.province);
     let nationalityDimension = ndx.dimension(d => d.nationality);
@@ -84,6 +93,7 @@ try {
 
     let investmentBySectorRowChart = dc.rowChart('#investment-by-sector-row-chart');
     let investmentByNationalityRowChart = dc.rowChart('#investment-by-nationality-row-chart');
+    // let investmentByNationalityBubbleCloud = dc.bubbleCloud('#investment-by-nationality-bubble-cloud')
 
     projectsByCoordinateMapChart
       .dimension(projectsByCoordinate)
@@ -104,22 +114,23 @@ try {
     projectsBySectorPieChart
       .dimension(sectorDimension)
       .group(sectorGroup)
-      .width(300)
-      .height(200)
+      .useViewBoxResizing(true)
+      .height(setHeight(projectsBySectorPieChart))
+      .cx(projectsBySectorPieChart / pieXscale)
+      .radius(projectsBySectorPieChart * pieRscale)
       .slicesCap(5)
       .innerRadius(40)
       .externalLabels(200)
-      .legend(new dc.HtmlLegend()
-        .container('.sector-legend')
-        .horizontal(false)
-        .highlightSelected(true)
+      .legend(dc.legend()
+        .y(Math.round(projectsBySectorPieChart.height()) * 0.02, 1)
+        .gap(Math.round(projectsBySectorPieChart.height() * 0.02, 1))
       )
 
     investmentBySectorRowChart
-      .dimension(sectorDimension)
+      .dimension(investmentSectorDimension)
       .group(investmentGroup)
-      .width(500)
-      .height(280)
+      .height(setHeight(investmentBySectorRowChart))
+      .useViewBoxResizing(true)
       .elasticX(true)
       .ordering( d => -d.value )
       .xAxis().ticks(5)
@@ -127,26 +138,36 @@ try {
     projectsByProvincePieChart
       .dimension(provinceDimension)
       .group(provinceGroup)
+      .height(setHeight(projectsByProvincePieChart))
+      .cx(projectsByProvincePieChart / pieXscale)
+      .radius(projectsByProvincePieChart * pieRscale)
       .slicesCap(5)
-      .width(300)
-      .height(200)
+      .useViewBoxResizing(true)
       .innerRadius(40)
       .externalLabels(200)
-      .legend(new dc.HtmlLegend()
-        .container('.province-legend')
-        .horizontal(false)
-        .highlightSelected(true)
+      .legend(dc.legend()
+        .y(Math.round(projectsByProvincePieChart.height()) * 0.02, 1)
+        .gap(Math.round(projectsByProvincePieChart.height() * 0.02, 1))
       )
 
     investmentByNationalityRowChart
       .dimension(nationalityDimension)
       .group(investmentNationalityGroup)
-      .width(500)
-      .height(380)
+      .useViewBoxResizing(true)
+      .height(setHeight(investmentByNationalityRowChart))
       .colors("#215979")
       .elasticX(true)
       .ordering( d => -d.value )
       .xAxis().ticks(5)
+
+    // investmentByNationalityBubbleCloud
+    //   .dimension(nationalityDimension)
+    //   .group(investmentNationalityGroup)
+    //   .width(500)
+    //   .height(500)
+    //   .x(d3.scaleOrdinal())
+    //   .r(d3.scaleLinear())
+      // .radiusValueAccessor(d => d.value)
 
     dc.renderAll();
   })
