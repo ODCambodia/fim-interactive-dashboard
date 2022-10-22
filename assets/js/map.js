@@ -1,6 +1,6 @@
 let map = L.map('fim-map', {
   gestureHandling: true,
-}).setView([12.5657, 104.9910], 6.5);
+}).setView([12.5657, 104.9910], 7);
 
 const osmMapnikUrl = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';
 const osmMapnikAttrib = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
@@ -28,7 +28,7 @@ L.control.layers(basemaps).addTo(map);
 map.addLayer(stadiaAlidadeSmooth);
 
 let stadiaAlidadeSmoothMini = L.tileLayer(stadiaAlidadeSmoothUrl, {
-  maxZoom: 19,
+  maxZoom: 20,
   attribution: stadiaAlidadeSmoothAttrib
 })
 

@@ -99,16 +99,25 @@ try {
       .dimension(projectsByCoordinate)
       .group(coordinateGroup)
       .map(map)
+      .valueAccessor(d => d.value.count)
       .showMarkerTitle(false)
       .fitOnRender(true)
       .fitOnRedraw(true)
       .filterByArea(true)
-      .cluster(false)
+      .cluster(true)
       .popup(d => {
         return '<p>Developer: <a target="_blank" href="' + d.value.project_url + '">' + d.value.developer + '</a></p>' +
               '<p>Capital Investment: USD ' + d.value.investment_mm + ' million</p>' +
               '<p>Development project: ' + d.value.project_type + '</p>' +
               '<p>Sector: ' + d.value.sector + '</p>';
+      })
+      .clusterOptions({
+        spiderfyOnMaxZoom: true,
+        spiderLegPolylineOptions: {
+          weight: 1,
+          color: '#000',
+          opacity: 0.8,
+        }
       })
 
     projectsBySectorPieChart
