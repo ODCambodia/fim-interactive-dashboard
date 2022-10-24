@@ -34,7 +34,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Dashboard<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Interactive Dashboard<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/timeline.html">Timeline</a>
@@ -52,10 +52,19 @@
                 </li>
             </ul>
         </div>
-        
     </nav>
 
     <div class="container-fluid">
+        <h1>Interactive Dashboard</h1>
+        <br>
+        <div class="chart-wrapper">
+            <div class="chart-stage">
+                <div class="dc-datatable-count">
+                    Selecting <span class="filter-count"></span> of <span class="total-count"></span> records
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-lg-4 px-1">
                 <div class="chart-wrapper">
@@ -174,10 +183,7 @@
         <div class="row">
             <!-- Data Table -->
             <div class="col-lg-12">
-                <div class="dc-datatable-count">
-                    <span class="filter-count"></span> selected out of <span class="total-count"></span> records
-                </div>
-
+                <strong>Table of Investment Project</strong>
                 <div id="fim-datatable"></div>
             </div>
         </div>
