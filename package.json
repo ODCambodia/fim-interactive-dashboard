@@ -23,6 +23,7 @@
     "d3": "^7.6.1",
     "dc": "^4.2.7",
     "dc-addons": "^0.13.5",
+    "dc-tableview": "^2.0.1",
     "dc.leaflet": "^0.5.6",
     "leaflet": "^1.9.2",
     "leaflet-gesture-handling": "^1.2.2",

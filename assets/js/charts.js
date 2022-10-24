@@ -24,10 +24,11 @@ try {
         developer           : record.pro_dev,
         project_url         : record.link_p,
         sector              : record.sector,
-        investment_mm       : record.cap_inv_m,
-        investment          : record.cap_inv,
+        investment_mm       : d3.format(',.2r')(record.cap_inv_m),
+        investment          : d3.format(',.2r')(record.cap_inv),
         nationality         : record.nat_pro,
         job_creation        : record.job_creat,
+        year_start          : record.sta_oper,
         province            : record.pro_loc,
         data_classification : record.data_c,
         reference           : record.reference,
@@ -59,6 +60,15 @@ try {
     let provinceDimension = ndx.dimension(d => d.province);
     let nationalityDimension = ndx.dimension(d => d.nationality);
 
+    let projectDimension = ndx.dimension(d => [
+      d.sector,
+      d.developer,
+      d.project_type,
+      d.investment_mm,
+      d.nationality,
+      d.year_start,
+    ])
+
     // Group
     let coordinateGroup = projectsByCoordinate.group().reduce((p, v) => {
       p.lat           = v.lat;
@@ -84,7 +94,8 @@ try {
     let investmentGroup = sectorDimension.group().reduceSum(d => d.investment_mm);
     let provinceGroup = provinceDimension.group().reduceCount();
     let investmentNationalityGroup = nationalityDimension.group().reduceSum(d => d.investment_mm);
-
+    let projectGroup = projectDimension.group();
+  
     // Charts
     let projectsByCoordinateMapChart = dc_leaflet.markerChart('#cluster-map-anchor');
     
@@ -177,6 +188,63 @@ try {
     //   .x(d3.scaleOrdinal())
     //   .r(d3.scaleLinear())
       // .radiusValueAccessor(d => d.value)
+
+    // DataTables
+    const datatableCount = dc.dataCount('.dc-datatable-count');
+    const datatable = dc.tableview('#fim-datatable')
+
+    const columns = [
+      {
+        title : 'Sector',
+        data  : d => d.sector,
+      },
+      {
+        title : 'Development Project',
+        data  : d => d.project_type
+      },
+      {
+        title : 'Developer',
+        data  : d => d.developer,
+      },
+      {
+        title : 'Nationality',
+        data  : d => d.nationality,
+      },
+      {
+        title : 'Capital Investment (Million USD)',
+        data  : d => d.investment_mm,
+      },
+      {
+        title : 'Start Year',
+        data  : d => d.year_start,
+      }
+    ]
+
+    datatableCount
+      .crossfilter(ndx)
+      .groupAll(all)
+
+    datatable
+      .dimension(projectDimension)
+      .group(projectGroup)
+      .columns(columns)
+      .size(25)
+      .enableColumnReordering(true)
+      .enablePaging(true)
+      .enablePagingSizeChange(true)
+      .enableSearch(true)
+      .enableAutoWidth(true)
+      .fixedHeader(true)
+      .enableScrolling(false)
+      .scrollingOptions({
+        scrollY: Infinity,
+        scrollCollapse: true,
+        deferRender: true,
+      })
+      .groupBy(d => d.sector)
+      .showGroups(true)
+      .select(true)
+      .buttons(["pdf", "csv", "excel", "print"])
 
     dc.renderAll();
   })
