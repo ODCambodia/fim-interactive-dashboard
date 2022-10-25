@@ -118,7 +118,7 @@ try {
       .cluster(true)
       .popup(d => {
         return '<p>Developer: <a target="_blank" href="' + d.value.project_url + '">' + d.value.developer + '</a></p>' +
-              '<p>Capital Investment: USD ' + d.value.investment_mm + ' million</p>' +
+              '<p>Capital Investment: USD ' + d3.format(',.2f')(d.value.investment_mm) + ' million</p>' +
               '<p>Development project: ' + d.value.project_type + '</p>' +
               '<p>Sector: ' + d.value.sector + '</p>';
       })
@@ -150,6 +150,8 @@ try {
       .dimension(investmentSectorDimension)
       .group(investmentGroup)
       .height(setHeight(investmentBySectorRowChart))
+      .rowsCap(8)
+      .title(d => 'USD ' + d3.format(',.2f')(d.value) + ' million')
       .useViewBoxResizing(true)
       .elasticX(true)
       .ordering( d => -d.value )
@@ -175,7 +177,9 @@ try {
       .group(investmentNationalityGroup)
       .useViewBoxResizing(true)
       .height(setHeight(investmentByNationalityRowChart))
-      .colors("#215979")
+      .colors('#04544F')
+      .rowsCap(8)
+      .title(d => 'USD ' + d3.format(',.2f')(d.value) + ' million')
       .elasticX(true)
       .ordering( d => -d.value )
       .xAxis().ticks(5)

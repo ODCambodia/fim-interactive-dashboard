@@ -17,3 +17,11 @@
   width: 100%;
   height: 500px;
 }
+
+.dc-chart g.row text {
+  fill: #000;
+}
+
+.dc-chart g.row rect {
+  opacity: .6;
+}
